@@ -362,7 +362,93 @@
     </section>
 
 
-
+  <!-- teams section start -->
+    <section class="pet" id="mypet">
+        <div class="max-width">
+            <h2 class="title">My Pet</h2>
+<style>
+            .masonry {
+              column-count: 3;
+              column-gap: 10px;
+            }
+        
+            .masonry img {
+              width: 100%;
+              margin-bottom: 10px;
+              border-radius: 6px;
+              cursor: pointer;
+              transition: transform 0.3s;
+            }
+        
+            .masonry img:hover {
+              transform: scale(1.02);
+            }
+        
+            /* Lightbox popup */
+            .lightbox {
+              position: fixed;
+              top: 0;
+              left: 0;
+              width: 100%;
+              height: 100%;
+              background: rgba(0, 0, 0, 0.85);
+              display: none;
+              justify-content: center;
+              align-items: center;
+              z-index: 1000;
+            }
+        
+            .lightbox img {
+              max-width: 90%;
+              max-height: 90%;
+              border-radius: 10px;
+            }
+        
+            .lightbox.active {
+              display: flex;
+            }
+        
+            @media (max-width: 768px) {
+              .masonry {
+                column-count: 2;
+              }
+            }
+        
+           
+          </style>
+   
+        
+          <div class="masonry">
+            <img src="assets/images/pet1.jpg" alt="petimg">
+                  <img src="assets/images/pet2.jpg" alt="petimg">
+                  <img src="assets/images/pet3.jpg" alt="petimg">
+                  <img src="assets/images/pet4.jpg" alt="petimg">
+                  <img src="assets/images/pet5.jpg" alt="petimg">
+                  <img src="assets/images/pet6.jpg" alt="petimg">
+          </div>
+        
+          <div class="lightbox" id="lightbox">
+            <img src="" alt="Full View" id="lightbox-img">
+          </div>
+        
+          <script>
+            const lightbox = document.getElementById('lightbox');
+            const lightboxImg = document.getElementById('lightbox-img');
+        
+            document.querySelectorAll('.masonry img').forEach(img => {
+              img.addEventListener('click', () => {
+                lightboxImg.src = img.src;
+                lightbox.classList.add('active');
+              });
+            });
+        
+            lightbox.addEventListener('click', () => {
+              lightbox.classList.remove('active');
+            });
+          </script>
+     
+        </div>
+    </section>
 
 
     <!-- contact section start -->
